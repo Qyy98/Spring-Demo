@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.example.springdemo.service.UserServiceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.56 s <<< FAILURE! - in com.example.springdemo.service.UserServiceTest
+test  Time elapsed: 0.023 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.example.springdemo.pojo.dto.UserView.getName()" because "userView" is null
+	at com.example.springdemo.service.UserServiceTest.test(UserServiceTest.java:27)
+

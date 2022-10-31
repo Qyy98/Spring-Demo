@@ -1,0 +1,11 @@
+/Users/qyy/Documents/Project/SpringDemo/src/main/java/com/example/springdemo/controller/UserController.java
+/Users/qyy/Documents/Project/SpringDemo/src/main/java/com/example/springdemo/general/CommonResult.java
+/Users/qyy/Documents/Project/SpringDemo/src/main/java/com/example/springdemo/pojo/dto/UserParam.java
+/Users/qyy/Documents/Project/SpringDemo/src/main/java/com/example/springdemo/service/UserService.java
+/Users/qyy/Documents/Project/SpringDemo/src/main/java/com/example/springdemo/config/Knife4jConfig.java
+/Users/qyy/Documents/Project/SpringDemo/src/main/java/com/example/springdemo/pojo/dto/UserView.java
+/Users/qyy/Documents/Project/SpringDemo/src/main/java/com/example/springdemo/pojo/po/User.java
+/Users/qyy/Documents/Project/SpringDemo/src/main/java/com/example/springdemo/general/LogAspect.java
+/Users/qyy/Documents/Project/SpringDemo/src/main/java/com/example/springdemo/general/StatusCode.java
+/Users/qyy/Documents/Project/SpringDemo/src/main/java/com/example/springdemo/service/UserServiceImpl.java
+/Users/qyy/Documents/Project/SpringDemo/src/main/java/com/example/springdemo/SpringDemoApplication.java

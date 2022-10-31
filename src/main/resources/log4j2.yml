@@ -1,0 +1,66 @@
+Configuration:
+  # 日志级别
+  status: all
+  # 日志监控间隔时间，单位：秒
+  monitorinterval: 10
+
+  # 全局变量
+  Properties:
+    # 缺省配置（用于开发环境）。其他环境需要在VM参数中指定，如下：
+    Property:
+      - name: log.level.console
+        value: all
+      #日志存放路径
+      - name: log.path
+        value: logs
+      - name: project.name
+        #项目名称
+        value: SpringDemo
+  # 日志输出
+  Appenders:
+    # 控制台输出
+    Console:
+      name: CONSOLE
+      target: SYSTEM_OUT
+      ThresholdFilter:
+        level:  ${sys:log.level.console} # “sys:”表示：如果VM参数中没指定这个变量值，则使用本文件中定义的缺省全局变量值
+        onMatch: ACCEPT
+        onMismatch: DENY
+      PatternLayout:
+        #显示日志模板
+        pattern: "%highlight{%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n}{STYLE=Logback}"
+    # 文件输出
+    RollingFile:
+      - name: ROLLING_FILE
+        ignoreExceptions: false
+        fileName: ${log.path}/${project.name}.log
+        filePattern: "${log.path}/${project.name}-%d{yyyy-MM-dd}-%i.log"
+        PatternLayout:
+          #日志
+          pattern: "%highlight{%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n}{STYLE=Logback}"
+        Policies:
+          SizeBasedTriggeringPolicy:
+            #文件超过多少进行切割
+            size: "100 MB"
+        DefaultRolloverStrategy:
+          #当天最多有多少个文件存在
+          max: 5
+          #重点删除规则
+          Delete:
+            #删除文件的根路径
+            basePath: ${log.path}
+            maxDepth: 2
+            IfFileName:
+              #删除日志匹配规则
+              glob: "${project.name}-*.log"
+            IfLastModified:
+              #保留多少天的日志
+              age: "20d"
+
+  Loggers:
+    Root:
+      level: info
+      AppenderRef:
+        - ref: CONSOLE
+        - ref: ROLLING_FILE
+
